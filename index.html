@@ -190,6 +190,21 @@ nav a:hover {
     padding: 7px 10px;
   }
 }
+#message {
+  animation: revealMessage 1.5s ease;
+}
+
+@keyframes revealMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 </style>
 </head>
