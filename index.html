@@ -205,6 +205,32 @@ nav a:hover {
     transform: translateY(0);
   }
 }
+.time-title {
+  animation: gentleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gentleGlow {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+#birthday button {
+  font-size: 18px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#birthday button:hover {
+  transform: scale(1.05);
+}
 
 </style>
 </head>
@@ -507,9 +533,12 @@ nav a:hover {
       more photographs and more letters.
     </p>
 
-    <button onclick="document.getElementById('message').style.display='block'">
-      Open Mommy & Dad's Message ❤️
-    </button>
+  <button onclick="openTimeCapsule()">Open Your Time Capsule ❤️</button>
+  <div id="timeCapsuleIntro" style="display:none;">
+<h3 class="time-title">18 years later… ❤️</h3>
+  <p>Mirabelle, if you're reading this, you're 18 now.</p>
+  <p>Before you read what Mommy and Dad wrote, take a moment and remember the little girl you once were.</p>
+</div>
 
     <div id="message">
 
@@ -569,6 +598,14 @@ function openPhoto(image) {
 function closePhoto() {
   document.getElementById("photoViewer").style.display = "none";
 }
+function openTimeCapsule() {
+  document.getElementById("timeCapsuleIntro").style.display = "block";
+
+  setTimeout(function() {
+    document.getElementById("message").style.display = "block";
+  }, 2500);
+}
+
 </script>
 
 </body>
